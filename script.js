@@ -13,7 +13,7 @@ async function fetchnews(query) {
       // get the news to using fetch() library..
       const res = await fetch(`${url}${query}&apiKey=${API_Key}`);
       //convert to data in json formet
-      const data = await res.json()
+      const data = await res.json();
       bindData(data.articles);
 }
 
@@ -24,7 +24,7 @@ function bindData(articles) {
       
       cardContainer.innerHTML = "";  // empty to the cardcontainer..
 
-      articles.forEach((article) => {
+      articles.forEach(article => {
 
             if(!article.urlToImage) return;       //article that do not have a image will be returned from here..
             const cardClone = newsCardTemplate.content.cloneNode(true);   // create the clone and clone the all element..
